@@ -1,0 +1,236 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: #0b0f19;
+  color: #f8fafc;
+  overflow-x: hidden;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  z-index: 10;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #1e293b;
+  gap: 12px;
+  flex-wrap: wrap; /* Badi screens par elements wrap hone ke liye */
+}
+.algorithm-type {
+  display: flex;
+  align-items: center; /* Vertical alignment center karega */
+  gap: 8px; /* Heading aur Dropdown ke beech ka gap */
+}
+
+.algorithm-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #22c55e;
+  text-transform: uppercase;
+  white-space: nowrap; /* Text ko nayi line par tootne se rokega */
+  margin: 0;
+}
+.header h1{
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #22c55e;
+  text-transform: uppercase;
+  margin: 0;
+}
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* --- Buttons & Inputs --- */
+.header button {
+  background: #f1f5f9;
+  color: #0f172a;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.header button:hover {
+  background: #22c55e;
+  color: #ffffff;
+}
+
+.header-mode, .header-input, .playback-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.play {
+  background: #22c55e !important;
+  color: #ffffff !important;
+}
+
+.play:hover {
+  background: #16a34a !important;
+}
+
+.login-button {
+  background: #3b82f6 !important;
+  color: #ffffff !important;
+}
+
+.login-button:hover {
+  background: #2563eb !important;
+}
+
+.input-box {
+  padding: 7px 12px;
+  border-radius: 6px;
+  border: 1px solid #334155;
+  background: #0f172a;
+  color: #f8fafc;
+  outline: none;
+  font-size: 0.85rem;
+  width: 130px;
+}
+
+.algorithm-dropdown {
+  padding: 7px 10px;
+  border-radius: 6px;
+  border: 1px solid #334155;
+  background: #0f172a;
+  color: #f8fafc;
+  outline: none;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.speed-slider {
+  display: flex;
+  align-items: center;
+}
+
+.slider {
+  accent-color: #22c55e;
+  cursor: pointer;
+  height: 4px;
+  width: 80px;
+}
+
+
+/* 1. Tablets & Medium Screens (max-width: 1024px) */
+@media screen and (max-width: 1024px) {
+  .header {
+    padding: 10px 16px;
+  }
+  .input-box {
+    width: 100px;
+  }
+}
+
+/* 2. Mobile Screens (max-width: 768px) */
+@media screen and (max-width: 768px) {
+  .header {
+    position: relative;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 10px 12px;
+  }
+
+  .header-text {
+    text-align: center;
+    width: 100%;
+  }
+  .header-text h1 {
+    font-size: 1rem;
+  }
+
+  .header-controls {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .header-mode{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .header-mode .mode-button {
+    flex: 1;
+    margin-right: 6px;
+  }
+  .login{
+    margin-left: 6px;
+  }
+  .header-input{
+    display: flex;
+   width: 100%;
+    gap: 6px;
+  }
+  .input-box {
+    flex:1;
+    width:auto;
+  }
+  .algorithm-type{
+    display: flex;
+    gap :6px;
+    width: 100%;
+  }
+  .algorithm-dropdown{
+    flex:1;
+    
+  }
+  .playback-controls{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    background:rgba(30,41,59,0.5);
+    padding: 6px 10px;
+    border-radius: 6px;
+    gap: 8px;
+  }
+  .speed-slider{
+    flex : 1;
+    display: flex;
+    justify-content: flex-end;
+    
+  }
+  .slider{
+    width: 100%;
+    max-width: 100px;
+  }
+}
+
+/* 3. Small Mobile Devices (max-width: 480px) */
+@media screen and (max-width: 480px) {
+  .header button,.input-box {
+    font-size: 0.75rem;
+    padding: 6px 10px;
+  }
+
+  .header-controls {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .header-mode, .header-input, .playback-controls, .algorithm-type, .login {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

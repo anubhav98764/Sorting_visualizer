@@ -1,0 +1,445 @@
+* {
+  margin: 0;
+  scroll-behavior: smooth;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-color: #fcfbf9; /* Typeform's warm signature light cream background */
+  color: #111111;
+  overflow-x: hidden;
+}
+
+.tf-site-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 60px;
+}
+
+/* Navbar */
+.tf-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto 40px auto;
+}
+
+.tf-brand {
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tf-brand-dot {
+  width: 10px;
+  height: 10px;
+  background-color: #ff5c5c;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.tf-brand-sub {
+  color: #ff5c5c;
+}
+
+.tf-nav-links {
+  display: flex;
+  gap: 35px;
+}
+
+.tf-nav-links a {
+  text-decoration: none;
+  color: #555555;
+  font-weight: 600;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.tf-nav-links a:hover {
+  color: #111111;
+}
+
+.tf-nav-actions {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.tf-btn-secondary {
+  background: transparent;
+  border: none;
+  font-weight: 700;
+  font-size: 14px;
+  color: #111;
+  cursor: pointer;
+  padding: 8px 16px;
+}
+
+.tf-btn-primary {
+  background-color: #111111;
+  color: #ffffff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.tf-btn-primary:hover {
+  background-color: #333333;
+  transform: translateY(-1px);
+}
+
+/* Hero Section */
+.tf-hero-section {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 60px;
+}
+
+.tf-pill-badge {
+  background-color: #f0ebe1;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #444;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tf-hero-title {
+  font-size: 60px;
+  font-weight: 900;
+  line-height: 1.12;
+  letter-spacing: -2.5px;
+  margin-bottom: 24px;
+}
+
+.tf-color-accent {
+  color: #2b59ff; /* Vibrant Typeform-style royal accent blue */
+}
+
+.tf-hero-subtitle {
+  font-size: 18px;
+  color: #606060;
+  line-height: 1.6;
+  max-width: 650px;
+  margin-bottom: 35px;
+}
+
+.tf-hero-cta-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+.tf-main-cta {
+  background-color: #2b59ff;
+  color: #ffffff;
+  border: none;
+  padding: 18px 40px;
+  border-radius: 40px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 12px 30px rgba(43, 89, 255, 0.3);
+  transition: all 0.2s ease;
+}
+
+.tf-main-cta:hover {
+  background-color: #1f43cb;
+  transform: translateY(-2px);
+}
+
+.tf-micro-note {
+  font-size: 12px;
+  color: #888888;
+}
+
+/* Interactive Preview Box */
+.tf-interactive-preview {
+  width: 100%;
+  max-width: 800px;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e6e2d6;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  text-align: left;
+}
+
+.tf-preview-topbar {
+  background: #f4f1eb;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e6e2d6;
+}
+
+.window-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.dot.red { background: #ff5f56; }
+.dot.yellow { background: #ffbd2e; }
+.dot.green { background: #27c93f; }
+
+.preview-label {
+  font-size: 12px;
+  color: #777;
+  font-family: monospace;
+}
+
+.preview-status {
+  font-size: 11px;
+  font-weight: 700;
+  color: #2b59ff;
+  background: rgba(43, 89, 255, 0.1);
+  padding: 3px 8px;
+  border-radius: 10px;
+}
+
+.tf-preview-content {
+  display: flex;
+  height: 240px;
+}
+
+.preview-sidebar-controls {
+  width: 220px;
+  background: #faf8f5;
+  border-right: 1px solid #e6e2d6;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tab-btn {
+  background: transparent;
+  border: none;
+  text-align: left;
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tab-btn:hover {
+  background: #f0ebe1;
+  color: #111;
+}
+
+.tab-btn.active {
+  background: #2b59ff;
+  color: #fff;
+}
+
+.preview-visualizer-screen {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  background: #ffffff;
+}
+
+.mock-bars-container {
+  height: 130px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 16px;
+}
+
+.m-bar {
+  width: 28px;
+  background: #dcd7ce;
+  border-radius: 6px 6px 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 6px;
+  font-size: 10px;
+  font-weight: bold;
+  color: #fff;
+  transition: height 0.3s ease;
+}
+
+.m-bar.compare { background: #ff5c5c; }
+.m-bar.swap { background: #f59e0b; }
+.m-bar.sorted { background: #10b981; }
+
+.mock-code-box {
+  background: #0f172a;
+  color: #38bdf8;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-family: monospace;
+  font-size: 12px;
+  text-align: center;
+}
+
+/* Value Cards Section */
+.tf-value-section {
+  max-width: 1000px;
+  margin: 40px auto 0 auto;
+  width: 100%;
+}
+
+.tf-value-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.tf-card {
+  background: #ffffff;
+  border: 1px solid #e6e2d6;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.02);
+}
+
+.tf-card h3 {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.tf-card p {
+  font-size: 14px;
+  color: #666666;
+  line-height: 1.5;
+}
+/* Contact Section Styles */
+.tf-contact-section {
+  border-top: 1px solid #e6e2d6;
+  padding: 80px 20px 40px 20px;
+  margin-top: 60px;
+  background: #f7f4ee;
+  text-align: center;
+}
+
+.tf-contact-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.tf-contact-title {
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  margin-bottom: 12px;
+  color: #111;
+}
+
+.tf-contact-subtitle {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.tf-social-links-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.tf-social-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #ffffff;
+  border: 1px solid #e6e2d6;
+  padding: 16px 28px;
+  border-radius: 14px;
+  text-decoration: none;
+  color: #111;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.02);
+  transition: all 0.2s ease;
+}
+
+.tf-social-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.06);
+  border-color: #ccc;
+}
+
+.tf-social-icon {
+  font-size: 32px;
+}
+
+.tf-social-card.instagram .tf-social-icon {
+  color: #e1306c; /* Instagram Brand Color */
+}
+
+.tf-social-card.github .tf-social-icon {
+  color: #24292e; /* GitHub Brand Color */
+}
+
+.tf-social-info {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.tf-social-label {
+  font-size: 12px;
+  color: #777;
+  font-weight: 500;
+}
+
+.tf-social-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111;
+}
+
+.tf-copyright {
+  font-size: 13px;
+  color: #888;
+  border-top: 1px solid #e6e2d6;
+  padding-top: 20px;
+}
+
+/* Responsive */
+@media(max-width: 900px) {
+  .tf-site-wrapper { padding: 20px; }
+  .tf-hero-title { font-size: 38px; }
+  .tf-value-grid { grid-template-columns: 1fr; }
+  .tf-nav-links { display: none; }
+  .tf-preview-content { flex-direction: column; height: auto; }
+  .preview-sidebar-controls { width: 100%; flex-direction: row; overflow-x: auto; }
+}
