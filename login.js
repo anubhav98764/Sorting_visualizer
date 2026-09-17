@@ -1,9 +1,17 @@
-const container = document.querySelector('.container');
-const registerBtn = document.querySelector('.register-btn');
-const loginBtn = document.querySelector('.login-btn');
+const toRegister = document.getElementById('to-register');
+        const toLogin = document.getElementById('to-login');
+        const loginBox = document.querySelector('.form-box.login');
+        const registerBox = document.querySelector('.form-box.register');
 
-registerBtn.addEventListener('click', () => container.classList.add('active'));
-loginBtn.addEventListener('click', () => container.classList.remove('active'));
+        toRegister.addEventListener('click', () => {
+            loginBox.style.display = 'none';
+            registerBox.style.display = 'flex';
+        });
+
+        toLogin.addEventListener('click', () => {
+            registerBox.style.display = 'none';
+            loginBox.style.display = 'flex';
+        });
 
 const BACKEND_URL = 'http://localhost:5000/api';
 
@@ -28,17 +36,13 @@ if (loginForm) {
             if (res.ok) {
                 alert('Login successful!');
                 
-                // Data capture karke check karein ki user object kahan hai
                 const userData = data.user || data;
 
-                // Agar profile picture nahi hai, toh backticks (``) ka use karke avatar generate karein
                 if (!userData.profilePicture) {
                     userData.profilePicture = `https://api.dicebear.com/7.x/avataaars/svg?seed=${userData.name || userData.username || 'user'}`;
                 }
 
-                // localStorage mein modified userData save karein
                 localStorage.setItem('user', JSON.stringify(userData));
-
                 window.location.href = '/';
             } else {
                 alert(data.error || 'Login failed');
@@ -72,7 +76,9 @@ if (registerForm) {
 
             if (res.ok) {
                 alert('Account created! Please log in.');
-                container.classList.remove('active');
+                // Switch back to login view smoothly
+                document.querySelector('.form-box.register').style.display = 'none';
+                document.querySelector('.form-box.login').style.display = 'flex';
             } else {
                 alert(data.error || 'Registration failed');
             }
